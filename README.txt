@@ -45,8 +45,8 @@ $ tree
 
 
 $ cat users.csv
-43,volkan.yazici@gmail.com,Volkan Yazıcı
-12,yaprak.ayazoglu@gmail.com,Yaprak Ayazoğlu
+43,vy@gmail.com,Volkan
+12,ya@gmail.com,Yaprak
 
 $ ./assign-texts.sh
 Usage: ./assign-texts.sh <TEXT-DIR> <USERS-FILE> <N-TEXT> <OUT_DIR>
@@ -68,10 +68,10 @@ $ tree
 ├── assign-texts.sh
 ├── hash-mails.sh
 ├── mails-fin
-│   ├── volkan.yazici@gmail.com
+│   ├── vy@gmail.com
 │   │   ├── 1.txt
 │   │   └── 2.txt
-│   └── yaprak.ayazoglu@gmail.com
+│   └── ya@gmail.com
 │       ├── 1.txt
 │       └── 2.txt
 ├── mails-inp
@@ -130,10 +130,10 @@ mails-zip
 $ grep ^SMTP send-mail.py
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USERNAME = "volkan.yazici@gmail.com"
+SMTP_USERNAME = "vy@gmail.com"
 SMTP_PASSWORD = "xxx"
-SMTP_FROM = "Volkan Yazıcı <volkan.yazici@gmail.com>"
-SMTP_CC = "Volkan Yazıcı <volkan.yazici@gmail.com>"
+SMTP_FROM = "VY <vy@gmail.com>"
+SMTP_CC = "VY <vy@gmail.com>"
 
 $ ./send-mails.sh
 Usage: ./send-mails.sh <USERS-FILE> <INPUT-DIR> <MAIL-SUBJECT> <MAIL-BODY-PATH>
