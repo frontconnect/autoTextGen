@@ -1,3 +1,30 @@
+For voice recognition project, a voice database needed to be generated. 
+
+For this purpose, a list of voice donators should be found, uniqe texts should be found from books, blogs,
+newspaper, etc.
+
+When those texts are read by unique users, the related text should be matched with the current
+
+This project is developed for generating user specific emails for voice donators.
+ 
+About hundreds of text mails are sent to the users. 
+
+This project is developed to automatically generate and send emails.
+
+* users.csv has the email list of the users.
+
+* first of all texts are found and saved below mails-inp folder
+
+* hash-mails.sh bash script generates hash codes for each text.
+
+* assign-texts.sh assigns texts to the users listed at user.csv file
+
+* prepare-attachments.sh creates a zip file for a specific user
+
+* send-mails.sh automatically mails the zip file to the respective users.
+
+Below, is a complete example to mail texts to the given users.
+
 $ tree
 .
 ├── assign-texts.sh
@@ -13,7 +40,6 @@ $ tree
 └── users.csv
 
 4 directories, 7 files
-
 
 
 $ ./hash-mails.sh
@@ -123,8 +149,6 @@ mails-zip
 └── ses_kayit_43.zip
 
 2 directories, 8 files
-
-
 
 
 $ grep ^SMTP send-mail.py
